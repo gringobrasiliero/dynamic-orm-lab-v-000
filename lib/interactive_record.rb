@@ -61,7 +61,6 @@ def self.find_by(hash)
   end
 end
 
-end
 
 
 
