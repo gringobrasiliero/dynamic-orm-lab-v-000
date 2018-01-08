@@ -54,7 +54,12 @@ def self.find_by_name(name)
   DB[:conn].execute(sql)
 end
 
-def self.find_by
+def self.find_by(hash)
+  hash.collect do |key, value|
+    sql = "SELECT * FROM #{table_name} WHERE #{key} = '#{value}'"
+    DB[:conn].execute(sql)[0]
+  end
+end
 
 end
 
